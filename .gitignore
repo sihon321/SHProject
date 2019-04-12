@@ -101,6 +101,6 @@ iOSInjectionProject/
 **/xcshareddata/WorkspaceSettings.xcsettings
 
 ## API Key ##
-
+KeyConstants.swift
 
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods
