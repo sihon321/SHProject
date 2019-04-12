@@ -1,0 +1,121 @@
+//
+//  AuthService.swift
+//  SHProject
+//
+//  Created by sihon321 on 12/04/2019.
+//  Copyright © 2019 sihon. All rights reserved.
+//
+
+import UIKit
+import OAuthSwift
+import SafariServices
+
+class AuthService {
+  
+  static let shared = AuthService()
+  
+  var viewFrame: CGRect?
+  
+  private var oauthswift: OAuthSwift?
+  
+  private lazy var internalWebViewController: WebViewController = {
+    let controller = WebViewController()
+    controller.view = UIView(frame: viewFrame ?? .zero)
+    controller.delegate = self
+    controller.viewDidLoad()
+    return controller
+  }()
+  
+  init() { }
+  
+  func requestToken(_ completion: @escaping (Bool) -> Void) {
+    let oauthswift = OAuth1Swift(
+      consumerKey:      KeyConstants.consumerKey,
+      consumerSecret:   KeyConstants.secretKey,
+      requestTokenUrl: "https://www.tumblr.com/oauth/request_token",
+      authorizeUrl:    "https://www.tumblr.com/oauth/authorize",
+      accessTokenUrl:  "https://www.tumblr.com/oauth/access_token"
+    )
+    
+    self.oauthswift = oauthswift
+    
+    // authorize
+    oauthswift.authorizeURLHandler = getURLHandler()
+    let _ = oauthswift.authorize(
+      withCallbackURL: URL(string: "shproject://oauth-callback/tumblr")!,
+      success: { credential, response, parameters in
+        print("auth token: \(credential.oauthToken)")
+        print("secret token: \(credential.oauthTokenSecret)")
+        completion(true)
+    },
+      failure: { error in
+        print(error.description)
+        completion(false)
+    })
+    
+  }
+  
+  func requestUserInfo(_ completion: @escaping (Bool, UserInfo?) -> Void) {
+    
+    let _ = oauthswift?.client.get("https://api.tumblr.com/v2/user/info",
+                                   headers: ["Accept":"application/json"],
+                                   success: { response in
+                                    var userInfo: UserInfo?
+                                    do {
+                                      userInfo = try UserInfo(data: response.data)
+                                      completion(true, userInfo)
+                                    } catch {
+                                      print("AuthService parsing Error")
+                                      userInfo = nil
+                                    }
+                                    completion(true, userInfo)
+    },
+                                   failure: { error in
+                                    print(error)
+                                    completion(false, nil)
+    })
+  }
+  
+  func requestDashBoard(_ oauthswift: OAuth1Swift){
+    
+    let url = "good.tumblr.com"
+    let _ = oauthswift.client.post("https://api.tumblr.com/v2/user/dashboard",
+                                   parameters: ["url": url],
+                                   success: { response in
+                                    let dataString = response.string!
+                                    print(dataString) },
+                                   failure: { error in print(error) })
+  }
+  
+  func getURLHandler() -> OAuthSwiftURLHandlerType {
+    return internalWebViewController
+  }
+  
+}
+
+extension AuthService: OAuthWebViewControllerDelegate {
+  
+  func oauthWebViewControllerDidPresent() {
+    
+  }
+  
+  func oauthWebViewControllerDidDismiss() {
+    
+  }
+  
+  func oauthWebViewControllerWillAppear() {
+    
+  }
+  
+  func oauthWebViewControllerDidAppear() {
+    
+  }
+  
+  func oauthWebViewControllerWillDisappear() {
+    
+  }
+  
+  func oauthWebViewControllerDidDisappear() {
+    oauthswift?.cancel()
+  }
+}

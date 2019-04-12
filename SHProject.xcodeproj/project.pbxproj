@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D8A945022606B6300E2AE09 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A944F22606B6300E2AE09 /* UserInfo.swift */; };
+		3D8A94532260787500E2AE09 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8A94522260787500E2AE09 /* AuthService.swift */; };
 		607EB8C4A79C99ADA78ABBEC /* Pods_SHProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 232EB6661A5C5A020D23BFB0 /* Pods_SHProject.framework */; };
 		634AAD0EEF940A44E4DA3622 /* Pods_SHProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D06E0A73D089A9E9369290 /* Pods_SHProjectTests.framework */; };
 		A818AA0E225E01C100CBFE22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA0D225E01C100CBFE22 /* AppDelegate.swift */; };
@@ -47,6 +49,8 @@
 /* Begin PBXFileReference section */
 		0873FFEFF1BD40338EDC0D7B /* Pods-SHProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHProjectTests.release.xcconfig"; path = "Target Support Files/Pods-SHProjectTests/Pods-SHProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		232EB6661A5C5A020D23BFB0 /* Pods_SHProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D8A944F22606B6300E2AE09 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		3D8A94522260787500E2AE09 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		5EFC9933AFEAA7E653295064 /* Pods-SHProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHProject.release.xcconfig"; path = "Target Support Files/Pods-SHProject/Pods-SHProject.release.xcconfig"; sourceTree = "<group>"; };
 		84799A7884BB01BF7CC1068C /* Pods-SHProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHProject.debug.xcconfig"; path = "Target Support Files/Pods-SHProject/Pods-SHProject.debug.xcconfig"; sourceTree = "<group>"; };
 		A4D06E0A73D089A9E9369290 /* Pods_SHProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SHProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +104,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D8A944E2260663200E2AE09 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D8A944F22606B6300E2AE09 /* UserInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D8A94512260785400E2AE09 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3D8A94522260787500E2AE09 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		A818AA01225E01C100CBFE22 = {
 			isa = PBXGroup;
 			children = (
@@ -123,10 +143,12 @@
 		A818AA0C225E01C100CBFE22 /* SHProject */ = {
 			isa = PBXGroup;
 			children = (
-				A818AA3A225E043F00CBFE22 /* Extensions */,
+				3D8A94512260785400E2AE09 /* Service */,
+				3D8A944E2260663200E2AE09 /* Model */,
+				A818AA3A225E043F00CBFE22 /* Extension */,
 				A818AA35225E039100CBFE22 /* AnimatedTransitioning */,
-				A818AA2E225E026700CBFE22 /* ViewControllers */,
-				A818AA41225E04C400CBFE22 /* Views */,
+				A818AA2E225E026700CBFE22 /* ViewController */,
+				A818AA41225E04C400CBFE22 /* View */,
 				A818AA11225E01C100CBFE22 /* Main.storyboard */,
 				A818AA19225E01C300CBFE22 /* Info.plist */,
 				A818AA2D225E01CA00CBFE22 /* Supporting Files */,
@@ -154,16 +176,16 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A818AA2E225E026700CBFE22 /* ViewControllers */ = {
+		A818AA2E225E026700CBFE22 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				A818AA2F225E02DB00CBFE22 /* ListViewController.swift */,
-				A818AA31225E032A00CBFE22 /* MainNavigationController.swift */,
 				A818AA33225E037600CBFE22 /* DetailViewController.swift */,
+				A818AA31225E032A00CBFE22 /* MainNavigationController.swift */,
 				A87C2F98225F7C440003EED8 /* LoginViewController.swift */,
 				A87C2F9A225F84810003EED8 /* WebViewController.swift */,
 			);
-			path = ViewControllers;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		A818AA35225E039100CBFE22 /* AnimatedTransitioning */ = {
@@ -177,7 +199,7 @@
 			path = AnimatedTransitioning;
 			sourceTree = "<group>";
 		};
-		A818AA3A225E043F00CBFE22 /* Extensions */ = {
+		A818AA3A225E043F00CBFE22 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				A818AA3B225E045600CBFE22 /* UIScreen+Size.swift */,
@@ -185,15 +207,15 @@
 				A818AA3F225E04A100CBFE22 /* UICollectionView+Extension.swift */,
 				A81AF30D226032FC00E77DC8 /* NibLoadableView.swift */,
 			);
-			path = Extensions;
+			path = Extension;
 			sourceTree = "<group>";
 		};
-		A818AA41225E04C400CBFE22 /* Views */ = {
+		A818AA41225E04C400CBFE22 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A818AA46225E04FC00CBFE22 /* Cells */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		A818AA46225E04FC00CBFE22 /* Cells */ = {
@@ -408,6 +430,7 @@
 				A818AA3C225E045600CBFE22 /* UIScreen+Size.swift in Sources */,
 				A818AA32225E032A00CBFE22 /* MainNavigationController.swift in Sources */,
 				A81AF30C2260311400E77DC8 /* KeyConstants.swift in Sources */,
+				3D8A94532260787500E2AE09 /* AuthService.swift in Sources */,
 				A818AA4E225E076F00CBFE22 /* TransitionProtocol.swift in Sources */,
 				A81AF30E226032FC00E77DC8 /* NibLoadableView.swift in Sources */,
 				A818AA3E225E047B00CBFE22 /* UIView+Origin.swift in Sources */,
@@ -418,6 +441,7 @@
 				A818AA37225E03B400CBFE22 /* AppearAnimatedTransitioning.swift in Sources */,
 				A818AA30225E02DB00CBFE22 /* ListViewController.swift in Sources */,
 				A87C2F9B225F84810003EED8 /* WebViewController.swift in Sources */,
+				3D8A945022606B6300E2AE09 /* UserInfo.swift in Sources */,
 				A818AA0E225E01C100CBFE22 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,6 +610,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SHProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -605,6 +630,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SHProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,6 +651,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W33L6B5D55;
 				INFOPLIST_FILE = SHProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -647,6 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W33L6B5D55;
 				INFOPLIST_FILE = SHProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

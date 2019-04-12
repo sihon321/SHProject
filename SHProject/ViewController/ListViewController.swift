@@ -15,11 +15,17 @@ class ListViewController: UIViewController {
   let gridWidth: CGFloat = (UIScreen.main.bounds.size.width / 2) - 5.0
   var colorList: [UIColor] = [.blue, .black, .orange, .yellow, .cyan, .gray, .green, .purple, .magenta, .red]
   let holder = TransitionManager()
+  var userInfo: UserInfo? = nil
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
     self.navigationController?.delegate = holder
+    
+    AuthService.shared.requestUserInfo { [weak self] (_, userInfo) in
+      guard let strongSelf = self else { return }
+      strongSelf.userInfo = userInfo
+      print(strongSelf.userInfo)
+    }
     
     collectionView.register(ListCollectionViewCell.self)
   }

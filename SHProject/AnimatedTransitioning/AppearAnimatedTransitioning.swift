@@ -46,7 +46,7 @@ class AppearAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioni
     let indexPath = listView.collectionView.toIndexPath()
     let gridView = listView.collectionView.cellForItem(at: indexPath as IndexPath)
     
-    let navigationPoint = CGPoint(x: .zero,
+    let navigationPoint = CGPoint(x: 0.0,
                                   y: 88.0)
     let leftUpperPoint = gridView!.convert(navigationPoint, to: nil)
     pageView.collectionView?.isHidden = true
