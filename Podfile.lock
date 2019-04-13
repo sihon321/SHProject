@@ -1,16 +1,20 @@
 PODS:
+  - Kingfisher (5.3.1)
   - OAuthSwift (1.2.2)
 
 DEPENDENCIES:
+  - Kingfisher (~> 5.0)
   - OAuthSwift (~> 1.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Kingfisher
     - OAuthSwift
 
 SPEC CHECKSUMS:
+  Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   OAuthSwift: 27b34fe80b76b67cd8f45571e0be2432bc9f6de1
 
-PODFILE CHECKSUM: 0d1c2188e1824b0f3c3213a5f43f98145b0bc08b
+PODFILE CHECKSUM: baece31a0387aa88901365a388de700779a70255
 
 COCOAPODS: 1.6.1

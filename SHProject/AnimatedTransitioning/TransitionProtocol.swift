@@ -11,7 +11,3 @@ import UIKit
 protocol TransitionProtocol {
   func transitionCollectionView() -> UICollectionView!
 }
-
-protocol TransitionGridViewProtocol {
-  func snapShotForTransition() -> UIView!
-}

@@ -43,18 +43,19 @@ class AppearAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioni
     containerView.addSubview(fromView)
     containerView.addSubview(toView)
     
-    let indexPath = listView.collectionView.toIndexPath()
+    let indexPath = listView.collectionView.toIndexPath(sectionType: .dashboard)
     let gridView = listView.collectionView.cellForItem(at: indexPath as IndexPath)
     
     let navigationPoint = CGPoint(x: 0.0,
                                   y: 88.0)
     let leftUpperPoint = gridView!.convert(navigationPoint, to: nil)
     pageView.collectionView?.isHidden = true
-    pageView.collectionView?.scrollToItem(at: indexPath as IndexPath,
+    pageView.collectionView?.scrollToItem(at: IndexPath(row: indexPath.row,
+                                                        section: 0),
                                          at:.centeredHorizontally,
                                          animated: false)
     
-    let snapShot = (gridView as! ListCollectionViewCell).snapShot()
+    let snapShot = (gridView as! DashboardInfoCell).snapShot()
     containerView.addSubview(snapShot!)
     snapShot?.origin(leftUpperPoint)
     

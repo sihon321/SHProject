@@ -24,14 +24,19 @@
 		A818AA3C225E045600CBFE22 /* UIScreen+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA3B225E045600CBFE22 /* UIScreen+Size.swift */; };
 		A818AA3E225E047B00CBFE22 /* UIView+Origin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA3D225E047B00CBFE22 /* UIView+Origin.swift */; };
 		A818AA40225E04A100CBFE22 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA3F225E04A100CBFE22 /* UICollectionView+Extension.swift */; };
-		A818AA44225E04F800CBFE22 /* ListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA42225E04F800CBFE22 /* ListCollectionViewCell.swift */; };
-		A818AA45225E04F800CBFE22 /* ListCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A818AA43225E04F800CBFE22 /* ListCollectionViewCell.xib */; };
 		A818AA49225E052600CBFE22 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA47225E052600CBFE22 /* DetailCollectionViewCell.swift */; };
 		A818AA4A225E052600CBFE22 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A818AA48225E052600CBFE22 /* DetailCollectionViewCell.xib */; };
 		A818AA4C225E062000CBFE22 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA4B225E062000CBFE22 /* TransitionManager.swift */; };
 		A818AA4E225E076F00CBFE22 /* TransitionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A818AA4D225E076F00CBFE22 /* TransitionProtocol.swift */; };
 		A81AF30C2260311400E77DC8 /* KeyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81AF30B2260311400E77DC8 /* KeyConstants.swift */; };
 		A81AF30E226032FC00E77DC8 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81AF30D226032FC00E77DC8 /* NibLoadableView.swift */; };
+		A81AF3112260C44300E77DC8 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81AF30F2260C44300E77DC8 /* UserInfoCell.swift */; };
+		A81AF3122260C44300E77DC8 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81AF3102260C44300E77DC8 /* UserInfoCell.xib */; };
+		A81AF3142260D06500E77DC8 /* DashboardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81AF3132260D06500E77DC8 /* DashboardInfo.swift */; };
+		A81AF3162260D09000E77DC8 /* TumblrModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81AF3152260D09000E77DC8 /* TumblrModelProtocol.swift */; };
+		A81AF3192260DDAC00E77DC8 /* DashboardInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81AF3172260DDAC00E77DC8 /* DashboardInfoCell.swift */; };
+		A81AF31A2260DDAC00E77DC8 /* DashboardInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81AF3182260DDAC00E77DC8 /* DashboardInfoCell.xib */; };
+		A8230D502261A70400E737E4 /* UIImageView+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */; };
 		A87C2F99225F7C440003EED8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C2F98225F7C440003EED8 /* LoginViewController.swift */; };
 		A87C2F9B225F84810003EED8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87C2F9A225F84810003EED8 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
@@ -71,14 +76,19 @@
 		A818AA3B225E045600CBFE22 /* UIScreen+Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Size.swift"; sourceTree = "<group>"; };
 		A818AA3D225E047B00CBFE22 /* UIView+Origin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Origin.swift"; sourceTree = "<group>"; };
 		A818AA3F225E04A100CBFE22 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
-		A818AA42225E04F800CBFE22 /* ListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCollectionViewCell.swift; sourceTree = "<group>"; };
-		A818AA43225E04F800CBFE22 /* ListCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListCollectionViewCell.xib; sourceTree = "<group>"; };
 		A818AA47225E052600CBFE22 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		A818AA48225E052600CBFE22 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		A818AA4B225E062000CBFE22 /* TransitionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		A818AA4D225E076F00CBFE22 /* TransitionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionProtocol.swift; sourceTree = "<group>"; };
 		A81AF30B2260311400E77DC8 /* KeyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyConstants.swift; sourceTree = "<group>"; };
 		A81AF30D226032FC00E77DC8 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		A81AF30F2260C44300E77DC8 /* UserInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		A81AF3102260C44300E77DC8 /* UserInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoCell.xib; sourceTree = "<group>"; };
+		A81AF3132260D06500E77DC8 /* DashboardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfo.swift; sourceTree = "<group>"; };
+		A81AF3152260D09000E77DC8 /* TumblrModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrModelProtocol.swift; sourceTree = "<group>"; };
+		A81AF3172260DDAC00E77DC8 /* DashboardInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardInfoCell.swift; sourceTree = "<group>"; };
+		A81AF3182260DDAC00E77DC8 /* DashboardInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardInfoCell.xib; sourceTree = "<group>"; };
+		A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Render.swift"; sourceTree = "<group>"; };
 		A87C2F98225F7C440003EED8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A87C2F9A225F84810003EED8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D9B0805472688FBB39DAF927 /* Pods-SHProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SHProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-SHProjectTests/Pods-SHProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				3D8A944F22606B6300E2AE09 /* UserInfo.swift */,
+				A81AF3132260D06500E77DC8 /* DashboardInfo.swift */,
+				A81AF3152260D09000E77DC8 /* TumblrModelProtocol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 				A818AA3D225E047B00CBFE22 /* UIView+Origin.swift */,
 				A818AA3F225E04A100CBFE22 /* UICollectionView+Extension.swift */,
 				A81AF30D226032FC00E77DC8 /* NibLoadableView.swift */,
+				A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -221,10 +234,12 @@
 		A818AA46225E04FC00CBFE22 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				A818AA42225E04F800CBFE22 /* ListCollectionViewCell.swift */,
-				A818AA43225E04F800CBFE22 /* ListCollectionViewCell.xib */,
 				A818AA47225E052600CBFE22 /* DetailCollectionViewCell.swift */,
 				A818AA48225E052600CBFE22 /* DetailCollectionViewCell.xib */,
+				A81AF30F2260C44300E77DC8 /* UserInfoCell.swift */,
+				A81AF3102260C44300E77DC8 /* UserInfoCell.xib */,
+				A81AF3172260DDAC00E77DC8 /* DashboardInfoCell.swift */,
+				A81AF3182260DDAC00E77DC8 /* DashboardInfoCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -335,7 +350,8 @@
 			files = (
 				A818AA18225E01C300CBFE22 /* LaunchScreen.storyboard in Resources */,
 				A818AA15225E01C300CBFE22 /* Assets.xcassets in Resources */,
-				A818AA45225E04F800CBFE22 /* ListCollectionViewCell.xib in Resources */,
+				A81AF3122260C44300E77DC8 /* UserInfoCell.xib in Resources */,
+				A81AF31A2260DDAC00E77DC8 /* DashboardInfoCell.xib in Resources */,
 				A818AA13225E01C100CBFE22 /* Main.storyboard in Resources */,
 				A818AA4A225E052600CBFE22 /* DetailCollectionViewCell.xib in Resources */,
 			);
@@ -360,12 +376,14 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SHProject/Pods-SHProject-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/OAuthSwift/OAuthSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OAuthSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,14 +450,18 @@
 				A81AF30C2260311400E77DC8 /* KeyConstants.swift in Sources */,
 				3D8A94532260787500E2AE09 /* AuthService.swift in Sources */,
 				A818AA4E225E076F00CBFE22 /* TransitionProtocol.swift in Sources */,
+				A81AF3192260DDAC00E77DC8 /* DashboardInfoCell.swift in Sources */,
+				A81AF3112260C44300E77DC8 /* UserInfoCell.swift in Sources */,
+				A8230D502261A70400E737E4 /* UIImageView+Render.swift in Sources */,
 				A81AF30E226032FC00E77DC8 /* NibLoadableView.swift in Sources */,
 				A818AA3E225E047B00CBFE22 /* UIView+Origin.swift in Sources */,
 				A818AA34225E037600CBFE22 /* DetailViewController.swift in Sources */,
 				A818AA40225E04A100CBFE22 /* UICollectionView+Extension.swift in Sources */,
 				A818AA39225E03C300CBFE22 /* DisappearAnimatedTransitioning.swift in Sources */,
-				A818AA44225E04F800CBFE22 /* ListCollectionViewCell.swift in Sources */,
 				A818AA37225E03B400CBFE22 /* AppearAnimatedTransitioning.swift in Sources */,
+				A81AF3142260D06500E77DC8 /* DashboardInfo.swift in Sources */,
 				A818AA30225E02DB00CBFE22 /* ListViewController.swift in Sources */,
+				A81AF3162260D09000E77DC8 /* TumblrModelProtocol.swift in Sources */,
 				A87C2F9B225F84810003EED8 /* WebViewController.swift in Sources */,
 				3D8A945022606B6300E2AE09 /* UserInfo.swift in Sources */,
 				A818AA0E225E01C100CBFE22 /* AppDelegate.swift in Sources */,

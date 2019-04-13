@@ -12,9 +12,17 @@ class DetailCollectionViewCell: UICollectionViewCell {
   
   @IBOutlet weak var imageView: UIImageView!
   
+  var post: PostElement? = nil
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     // Initialization code
+  }
+  
+  func config(_ post: PostElement?) {
+    self.post = post
+    let url = URL(string: post?.photos?.first?.originalSize?.url ?? "")
+    imageView.render(img: url, contentMode: .scaleAspectFit)
   }
   
   func snapShotForTransition() -> UIView! {

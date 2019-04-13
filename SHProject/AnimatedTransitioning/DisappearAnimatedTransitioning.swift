@@ -43,11 +43,11 @@ class DisappearAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransiti
     
     listView.collectionView.layoutIfNeeded()
     let indexPath = (pageView.collectionView?.fromPageIndexPath())!
-    let gridView = listView.collectionView.cellForItem(at: indexPath)
+    let gridView = listView.collectionView.cellForItem(at: IndexPath(row: indexPath.row, section: 1))
     let leftUpperPoint = gridView!.convert(CGPoint.zero, to: toViewController.view)
     
     let animationScale = UIScreen.width / (UIScreen.width / 2 - 5.0)
-    let snapShot = (gridView as! ListCollectionViewCell).snapShot()
+    let snapShot = (gridView as! DashboardInfoCell).snapShot()
     snapShot?.transform = CGAffineTransform(scaleX: animationScale,
                                             y: animationScale)
     let offsetY: CGFloat = 88.0

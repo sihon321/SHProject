@@ -65,7 +65,7 @@ class AuthService {
                                       userInfo = try UserInfo(data: response.data)
                                       completion(true, userInfo)
                                     } catch {
-                                      print("AuthService parsing Error")
+                                      print(error)
                                       userInfo = nil
                                     }
                                     completion(true, userInfo)
@@ -76,18 +76,29 @@ class AuthService {
     })
   }
   
-  func requestDashBoard(_ oauthswift: OAuth1Swift){
+  func requestDashBoard(_ completion: @escaping (Bool, DashboardInfo?) -> Void){
     
-    let url = "good.tumblr.com"
-    let _ = oauthswift.client.post("https://api.tumblr.com/v2/user/dashboard",
-                                   parameters: ["url": url],
+    let _ = oauthswift?.client.get("https://api.tumblr.com/v2/user/dashboard",
+                                   headers: ["Accept":"application/json"],
                                    success: { response in
-                                    let dataString = response.string!
-                                    print(dataString) },
-                                   failure: { error in print(error) })
+                                    var dashBoardInfo: DashboardInfo?
+                                    do {
+                                      dashBoardInfo = try DashboardInfo(data: response.data)
+                                      
+                                      completion(true, dashBoardInfo)
+                                    } catch {
+                                      print(error)
+                                      dashBoardInfo = nil
+                                    }
+                                    completion(true, dashBoardInfo)
+    },
+                                   failure: { error in
+                                    print(error)
+                                    completion(false, nil)
+    })
   }
   
-  func getURLHandler() -> OAuthSwiftURLHandlerType {
+  private func getURLHandler() -> OAuthSwiftURLHandlerType {
     return internalWebViewController
   }
   

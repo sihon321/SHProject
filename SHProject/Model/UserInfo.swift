@@ -8,25 +8,16 @@
 
 import Foundation
 
-struct UserInfo: Codable {
-  let meta: Meta
-  let response: Response
-}
-
-struct Meta: Codable {
-  let status: Int
-  let msg: String
-}
-
-struct Response: Codable {
-  let user: User
+struct UserInfo: Codable, TumblrModelProtocol {
+  var meta: Meta
+  var response: Response
 }
 
 struct User: Codable {
-  let name: String
-  let likes, following: Int
-  let defaultPostFormat: String
-  let blogs: [Blog]
+  let name: String?
+  let likes, following: Int?
+  let defaultPostFormat: String?
+  let blogs: [Blog]?
   
   enum CodingKeys: String, CodingKey {
     case name, likes, following
@@ -36,29 +27,29 @@ struct User: Codable {
 }
 
 struct Blog: Codable {
-  let admin, ask, askAnon: Bool
-  let askPageTitle: String
-  let canSendFanMail, canSubscribe: Bool
-  let description: String
-  let drafts: Int
-  let facebook, facebookOpengraphEnabled: String
-  let followed: Bool
-  let followers: Int
-  let isBlockedFromPrimary, isNsfw: Bool
-  let likes, messages: Int
-  let name: String
-  let posts: Int
-  let primary: Bool
-  let queue: Int
-  let shareLikes, subscribed: Bool
-  let title: String
-  let totalPosts: Int
-  let tweet: String
-  let twitterEnabled, twitterSend: Bool
-  let type: String
-  let updated: Int
-  let url: String
-  let uuid: String
+  let admin, ask, askAnon: Bool?
+  let askPageTitle: String?
+  let canSendFanMail, canSubscribe: Bool?
+  let description: String?
+  let drafts: Int?
+  let facebook, facebookOpengraphEnabled: String?
+  let followed: Bool?
+  let followers: Int?
+  let isBlockedFromPrimary, isNsfw: Bool?
+  let likes, messages: Int?
+  let name: String?
+  let posts: Int?
+  let primary: Bool?
+  let queue: Int?
+  let shareLikes, subscribed: Bool?
+  let title: String?
+  let totalPosts: Int?
+  let tweet: String?
+  let twitterEnabled, twitterSend: Bool?
+  let type: String?
+  let updated: Int?
+  let url: String?
+  let uuid: String?
   
   enum CodingKeys: String, CodingKey {
     case admin, ask
@@ -123,7 +114,7 @@ extension Blog {
   }
 }
 
-fileprivate func newJSONDecoder() -> JSONDecoder {
+private func newJSONDecoder() -> JSONDecoder {
   let decoder = JSONDecoder()
   if #available(iOS 10.0, watchOS 3.0, *) {
     decoder.dateDecodingStrategy = .iso8601

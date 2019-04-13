@@ -8,6 +8,7 @@ target 'SHProject' do
   
   # Pods for SHProject
   pod 'OAuthSwift', '~> 1.2.0', :inhibit_warnings => true
+  pod 'Kingfisher', '~> 5.0'
   
   target 'SHProjectTests' do
     inherit! :search_paths

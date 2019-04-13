@@ -9,7 +9,8 @@
 import UIKit
 
 final class TransitionManager: NSObject {
-  
+  let appearTransitioning = AppearAnimatedTransitioning()
+  let disappearTransitioning = DisappearAnimatedTransitioning()
 }
 
 extension TransitionManager: UINavigationControllerDelegate {
@@ -20,9 +21,9 @@ extension TransitionManager: UINavigationControllerDelegate {
                             to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning?{
     switch operation {
     case .push:
-      return AppearAnimatedTransitioning()
+      return appearTransitioning
     case .pop:
-      return DisappearAnimatedTransitioning()
+      return disappearTransitioning
     case .none:
       return nil
     }

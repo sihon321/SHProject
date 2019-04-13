@@ -12,13 +12,18 @@ class DetailViewController: UICollectionViewController {
   
   var colorList: [UIColor] = [.blue, .black, .orange, .yellow, .cyan, .gray, .green, .purple, .magenta, .red]
   
-  init(collectionViewLayout layout: UICollectionViewLayout, currentIndexPath indexPath: IndexPath) {
+  var posts: [PostElement]? = nil
+  
+  init(data: [PostElement]?,
+       collectionViewLayout layout: UICollectionViewLayout,
+       currentIndexPath indexPath: IndexPath) {
     super.init(collectionViewLayout:layout)
 
+    posts = data
     collectionView.isPagingEnabled = true
     collectionView.register(DetailCollectionViewCell.self)
     
-    collectionView.setToIndexPath(indexPath)
+    collectionView.setToIndexPath(IndexPath(row: indexPath.row, section: 0))
     collectionView.performBatchUpdates({collectionView.reloadData()}, completion: { finished in
       if finished {
         self.collectionView.scrollToItem(at: indexPath,at:.centeredHorizontally, animated: false)
@@ -39,15 +44,15 @@ class DetailViewController: UICollectionViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return colorList.count
+    return posts?.count ?? 0
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let post = posts?[indexPath.row]
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCollectionViewCell.reuseIdentifier,
                                                   for: indexPath) as! DetailCollectionViewCell
-    
-    cell.imageView.backgroundColor = colorList[indexPath.row]
-    
+    cell.config(post)
+    cell.setNeedsLayout()
     return cell
   }
 }
