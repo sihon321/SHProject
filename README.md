@@ -2,7 +2,7 @@
 
 ## 개요
 
-- 본 앱은 iphoe Xr에서 최적화 되어있습니다.
+- 본 앱은 iphone Xr에서 최적화 되어있습니다.
 - Tumblr의 API를 받아와서 Image만 볼 수 있도록 구성했습니다.
 
 ## Requirement
