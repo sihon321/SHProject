@@ -9,6 +9,6 @@
 import Foundation
 
 class KeyConstants {
-  static let consumerKey = ""
-  static let secretKey = ""
+  static let consumerKey = "rPo2wtLKM5doEZ1j0Ct6x3Fjbia1XrXssbE8IVAYjIgyA7k6Y5"
+  static let secretKey = "Yf0cEtfCFu2lCZO6iteWstdKD1MInJiF3EaMfnlGYUlGaQ46Qx"
 }

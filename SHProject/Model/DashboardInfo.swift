@@ -8,18 +8,21 @@
 
 import Foundation
 
-struct DashboardInfo: Codable, TumblrModelProtocol {
+struct DashboardInfo: TumblrModelProtocol {
   var meta: Meta
   var response: Response
 }
 
 struct PostElement: Codable {
-  let type, blogName: String?
+  let type: PostType?
+  let blogName: String?
   let blog: PostBlog?
+  let id: Int?
   let postURL: String?
   let date: String?
   let tags: [String]?
   let shortURL: String?
+  let summary: String?
   let followed, liked: Bool?
   let noteCount: Int?
   let trail: [Trail]?
@@ -30,16 +33,22 @@ struct PostElement: Codable {
     case type
     case blogName = "blog_name"
     case blog
+    case id
     case postURL = "post_url"
     case date
     case tags
     case shortURL = "short_url"
+    case summary
     case followed, liked
     case noteCount = "note_count"
     case trail
     case imagePermalink = "image_permalink"
     case photos
   }
+}
+
+enum PostType: String, Codable {
+  case photo, text, answer, video
 }
 
 struct PostBlog: Codable {
@@ -68,9 +77,11 @@ struct Size: Codable {
 
 struct Trail: Codable {
   let blog: TrailBlog?
+  let content: String?
   
   enum CodingKeys: String, CodingKey {
     case blog
+    case content
   }
 }
 

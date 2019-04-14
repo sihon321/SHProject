@@ -57,13 +57,12 @@ class AuthService {
   
   func requestUserInfo(_ completion: @escaping (Bool, UserInfo?) -> Void) {
     
-    let _ = oauthswift?.client.get("https://api.tumblr.com/v2/user/info",
+    let _ = oauthswift?.client.get(TumblrUrl.userInfo.path,
                                    headers: ["Accept":"application/json"],
                                    success: { response in
                                     var userInfo: UserInfo?
                                     do {
                                       userInfo = try UserInfo(data: response.data)
-                                      completion(true, userInfo)
                                     } catch {
                                       print(error)
                                       userInfo = nil
@@ -76,16 +75,16 @@ class AuthService {
     })
   }
   
-  func requestDashBoard(_ completion: @escaping (Bool, DashboardInfo?) -> Void){
+  func requestDashBoard(_ offset: Int = 0,
+                        _ completion: @escaping (Bool, DashboardInfo?) -> Void) {
     
-    let _ = oauthswift?.client.get("https://api.tumblr.com/v2/user/dashboard",
-                                   headers: ["Accept":"application/json"],
+    let _ = oauthswift?.client.get(TumblrUrl.dashboard.path,
+                                   parameters: ["offset": offset],
+                                   headers: ["Accept": "application/json"],
                                    success: { response in
                                     var dashBoardInfo: DashboardInfo?
                                     do {
                                       dashBoardInfo = try DashboardInfo(data: response.data)
-                                      
-                                      completion(true, dashBoardInfo)
                                     } catch {
                                       print(error)
                                       dashBoardInfo = nil

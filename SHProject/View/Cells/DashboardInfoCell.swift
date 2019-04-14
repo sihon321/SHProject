@@ -25,7 +25,14 @@ class DashboardInfoCell: UICollectionViewCell {
     
     let url = URL(string: post.photos?.first?.originalSize?.url ?? "")
     mainImageView.render(img: url)
-    titleLabel.text = post.tags?.joined(separator: ",")
+    
+    if post.tags?.isEmpty ?? true {
+      titleLabel.text = post.summary
+    } else {
+      titleLabel.text = post.tags?
+        .map({ "#"+$0 })
+        .joined(separator: ", ")
+    }
   }
   
   func snapShot() -> UIView! {
@@ -36,7 +43,7 @@ class DashboardInfoCell: UICollectionViewCell {
 }
 
 extension DashboardInfoCell {
-  static func cellSize() -> CGSize {
+  static func size() -> CGSize {
     return CGSize(width: (UIScreen.width / 2) - 20.0, height: 300.0)
   }
 }

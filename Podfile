@@ -7,6 +7,8 @@ target 'SHProject' do
   platform :ios, '10.0'
   
   # Pods for SHProject
+  pod 'Alamofire'
+  pod 'AlamofireImage', '~> 3.5'
   pod 'OAuthSwift', '~> 1.2.0', :inhibit_warnings => true
   pod 'Kingfisher', '~> 5.0'
   

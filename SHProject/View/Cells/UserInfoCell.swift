@@ -37,7 +37,7 @@ class UserInfoCell: UICollectionViewCell {
 }
 
 extension UserInfoCell {
-  static func cellSize() -> CGSize {
+  static func size() -> CGSize {
     return CGSize(width: UIScreen.width - 30.0, height: 80.0)
   }
 }

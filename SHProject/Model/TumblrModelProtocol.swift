@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TumblrModelProtocol {
+protocol TumblrModelProtocol: Codable {
   var meta: Meta { set get }
   var response: Response { set get }
 }
@@ -22,5 +22,3 @@ struct Response: Codable {
   let user: User?
   let posts: [PostElement]?
 }
-
-

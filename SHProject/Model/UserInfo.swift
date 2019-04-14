@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct UserInfo: Codable, TumblrModelProtocol {
+struct UserInfo: TumblrModelProtocol {
   var meta: Meta
   var response: Response
 }
@@ -16,60 +16,21 @@ struct UserInfo: Codable, TumblrModelProtocol {
 struct User: Codable {
   let name: String?
   let likes, following: Int?
-  let defaultPostFormat: String?
   let blogs: [Blog]?
   
   enum CodingKeys: String, CodingKey {
     case name, likes, following
-    case defaultPostFormat = "default_post_format"
     case blogs
   }
 }
 
 struct Blog: Codable {
-  let admin, ask, askAnon: Bool?
-  let askPageTitle: String?
-  let canSendFanMail, canSubscribe: Bool?
-  let description: String?
-  let drafts: Int?
-  let facebook, facebookOpengraphEnabled: String?
-  let followed: Bool?
-  let followers: Int?
-  let isBlockedFromPrimary, isNsfw: Bool?
-  let likes, messages: Int?
-  let name: String?
-  let posts: Int?
-  let primary: Bool?
-  let queue: Int?
-  let shareLikes, subscribed: Bool?
+  let posts, followers: Int?
   let title: String?
-  let totalPosts: Int?
-  let tweet: String?
-  let twitterEnabled, twitterSend: Bool?
-  let type: String?
-  let updated: Int?
-  let url: String?
-  let uuid: String?
   
   enum CodingKeys: String, CodingKey {
-    case admin, ask
-    case askAnon = "ask_anon"
-    case askPageTitle = "ask_page_title"
-    case canSendFanMail = "can_send_fan_mail"
-    case canSubscribe = "can_subscribe"
-    case description, drafts, facebook
-    case facebookOpengraphEnabled = "facebook_opengraph_enabled"
-    case followed, followers
-    case isBlockedFromPrimary = "is_blocked_from_primary"
-    case isNsfw = "is_nsfw"
-    case likes, messages, name, posts, primary, queue
-    case shareLikes = "share_likes"
-    case subscribed, title
-    case totalPosts = "total_posts"
-    case tweet
-    case twitterEnabled = "twitter_enabled"
-    case twitterSend = "twitter_send"
-    case type, updated, url, uuid
+    case posts, followers
+    case title
   }
 }
 

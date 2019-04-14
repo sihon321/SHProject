@@ -1,20 +1,29 @@
 PODS:
+  - Alamofire (4.8.2)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
   - Kingfisher (5.3.1)
   - OAuthSwift (1.2.2)
 
 DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage (~> 3.5)
   - Kingfisher (~> 5.0)
   - OAuthSwift (~> 1.2.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
     - Kingfisher
     - OAuthSwift
 
 SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
   Kingfisher: d9e7e0b209b59b8f9873aa2f37654e81a7beea51
   OAuthSwift: 27b34fe80b76b67cd8f45571e0be2432bc9f6de1
 
-PODFILE CHECKSUM: baece31a0387aa88901365a388de700779a70255
+PODFILE CHECKSUM: f8a8adabefd7e1c138932c721af86e74c42d843c
 
 COCOAPODS: 1.6.1

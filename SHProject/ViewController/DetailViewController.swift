@@ -10,15 +10,17 @@ import UIKit
 
 class DetailViewController: UICollectionViewController {
   
-  var colorList: [UIColor] = [.blue, .black, .orange, .yellow, .cyan, .gray, .green, .purple, .magenta, .red]
-  
   var posts: [PostElement]? = nil
+  
+  var avatarImages: [String: UIImage] = [:]
   
   init(data: [PostElement]?,
        collectionViewLayout layout: UICollectionViewLayout,
        currentIndexPath indexPath: IndexPath) {
     super.init(collectionViewLayout:layout)
-
+    
+    view.backgroundColor = .white
+    collectionView.backgroundColor = .white
     posts = data
     collectionView.isPagingEnabled = true
     collectionView.register(DetailCollectionViewCell.self)
@@ -37,6 +39,16 @@ class DetailViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
+  
+  private func fetchAvatarImage(_ id: String?, _ indexPath: IndexPath) {
+    
+    if let id = id, avatarImages[id] == nil {
+      BlogService.shared.requestAvatar(id, size: 64) { [weak self] image in
+        self?.avatarImages[id] = image
+        self?.collectionView.reloadItems(at: [indexPath])
+      }
+    }
+  }
   // MARK: UICollectionViewDataSource
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -48,11 +60,13 @@ class DetailViewController: UICollectionViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let post = posts?[indexPath.row]
+
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCollectionViewCell.reuseIdentifier,
                                                   for: indexPath) as! DetailCollectionViewCell
-    cell.config(post)
-    cell.setNeedsLayout()
+    if let post = posts?[indexPath.row], let id = post.blog?.name {
+      fetchAvatarImage(id, indexPath)
+      cell.config(post, avatarImages[id])
+    }
     return cell
   }
 }

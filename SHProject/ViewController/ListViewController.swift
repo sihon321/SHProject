@@ -37,7 +37,7 @@ class ListViewController: UIViewController {
     AuthService.shared.requestDashBoard { [weak self] (_, dashboardInfo) in
       guard let strongSelf = self else { return }
       strongSelf.dashboardInfo = dashboardInfo
-      strongSelf.posts = dashboardInfo?.response.posts?.filter { $0.photos?.first?.originalSize?.url != nil }.map { $0 }
+      strongSelf.posts = dashboardInfo?.response.posts?.filter { $0.type == .photo }
       strongSelf.collectionView.reloadSections(IndexSet([ListSectionType.dashboard.rawValue]))
     }
     
@@ -115,9 +115,9 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
     
     switch section {
     case .user:
-      return UserInfoCell.cellSize()
+      return UserInfoCell.size()
     case .dashboard:
-      return DashboardInfoCell.cellSize()
+      return DashboardInfoCell.size()
     }
   }
   
