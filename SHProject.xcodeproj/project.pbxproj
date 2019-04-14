@@ -38,13 +38,12 @@
 		A81AF31A2260DDAC00E77DC8 /* DashboardInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A81AF3182260DDAC00E77DC8 /* DashboardInfoCell.xib */; };
 		A82236552263227B00C8BAE5 /* TrailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236532263227B00C8BAE5 /* TrailInfoCell.swift */; };
 		A82236562263227B00C8BAE5 /* TrailInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82236542263227B00C8BAE5 /* TrailInfoCell.xib */; };
-		A82236582263319E00C8BAE5 /* Int+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236572263319E00C8BAE5 /* Int+NumberFormatter.swift */; };
+		A82236582263319E00C8BAE5 /* Integer+NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236572263319E00C8BAE5 /* Integer+NumberFormatter.swift */; };
 		A822365A2263344E00C8BAE5 /* String+DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236592263344E00C8BAE5 /* String+DateFormatter.swift */; };
 		A822365E226344FF00C8BAE5 /* ListFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822365C226344FF00C8BAE5 /* ListFooterView.swift */; };
 		A822365F226344FF00C8BAE5 /* ListFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A822365D226344FF00C8BAE5 /* ListFooterView.xib */; };
 		A82236612263480700C8BAE5 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236602263480700C8BAE5 /* UITableView+Extension.swift */; };
 		A82236632263687E00C8BAE5 /* TumblrImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236622263687E00C8BAE5 /* TumblrImage.swift */; };
-		A8230D502261A70400E737E4 /* UIImageView+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */; };
 		A8230D522261FCE000E737E4 /* URLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D512261FCE000E737E4 /* URLPath.swift */; };
 		A8230D542262076A00E737E4 /* BlogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D532262076A00E737E4 /* BlogService.swift */; };
 		A8230D5B22621C3600E737E4 /* ImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D5922621C3600E737E4 /* ImageViewCell.swift */; };
@@ -104,13 +103,12 @@
 		A81AF3182260DDAC00E77DC8 /* DashboardInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardInfoCell.xib; sourceTree = "<group>"; };
 		A82236532263227B00C8BAE5 /* TrailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailInfoCell.swift; sourceTree = "<group>"; };
 		A82236542263227B00C8BAE5 /* TrailInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailInfoCell.xib; sourceTree = "<group>"; };
-		A82236572263319E00C8BAE5 /* Int+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+NumberFormatter.swift"; sourceTree = "<group>"; };
+		A82236572263319E00C8BAE5 /* Integer+NumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Integer+NumberFormatter.swift"; sourceTree = "<group>"; };
 		A82236592263344E00C8BAE5 /* String+DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+DateFormatter.swift"; sourceTree = "<group>"; };
 		A822365C226344FF00C8BAE5 /* ListFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFooterView.swift; sourceTree = "<group>"; };
 		A822365D226344FF00C8BAE5 /* ListFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFooterView.xib; sourceTree = "<group>"; };
 		A82236602263480700C8BAE5 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		A82236622263687E00C8BAE5 /* TumblrImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrImage.swift; sourceTree = "<group>"; };
-		A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Render.swift"; sourceTree = "<group>"; };
 		A8230D512261FCE000E737E4 /* URLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPath.swift; sourceTree = "<group>"; };
 		A8230D532262076A00E737E4 /* BlogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogService.swift; sourceTree = "<group>"; };
 		A8230D5922621C3600E737E4 /* ImageViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewCell.swift; sourceTree = "<group>"; };
@@ -247,8 +245,7 @@
 				A818AA3B225E045600CBFE22 /* UIScreen+Size.swift */,
 				A818AA3D225E047B00CBFE22 /* UIView+Extension.swift */,
 				A818AA3F225E04A100CBFE22 /* UICollectionView+Extension.swift */,
-				A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */,
-				A82236572263319E00C8BAE5 /* Int+NumberFormatter.swift */,
+				A82236572263319E00C8BAE5 /* Integer+NumberFormatter.swift */,
 				A82236592263344E00C8BAE5 /* String+DateFormatter.swift */,
 				A82236602263480700C8BAE5 /* UITableView+Extension.swift */,
 			);
@@ -515,7 +512,6 @@
 				A8230D522261FCE000E737E4 /* URLPath.swift in Sources */,
 				A81AF3192260DDAC00E77DC8 /* DashboardInfoCell.swift in Sources */,
 				A81AF3112260C44300E77DC8 /* UserInfoCell.swift in Sources */,
-				A8230D502261A70400E737E4 /* UIImageView+Render.swift in Sources */,
 				A81AF30E226032FC00E77DC8 /* NibLoadableView.swift in Sources */,
 				A818AA3E225E047B00CBFE22 /* UIView+Extension.swift in Sources */,
 				A818AA34225E037600CBFE22 /* DetailViewController.swift in Sources */,
@@ -529,7 +525,7 @@
 				A818AA30225E02DB00CBFE22 /* ListViewController.swift in Sources */,
 				A81AF3162260D09000E77DC8 /* TumblrModelProtocol.swift in Sources */,
 				A87C2F9B225F84810003EED8 /* WebViewController.swift in Sources */,
-				A82236582263319E00C8BAE5 /* Int+NumberFormatter.swift in Sources */,
+				A82236582263319E00C8BAE5 /* Integer+NumberFormatter.swift in Sources */,
 				3D8A945022606B6300E2AE09 /* UserInfo.swift in Sources */,
 				A818AA0E225E01C100CBFE22 /* AppDelegate.swift in Sources */,
 				A82236612263480700C8BAE5 /* UITableView+Extension.swift in Sources */,

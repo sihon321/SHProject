@@ -9,8 +9,8 @@
 import Foundation
 
 struct UserInfo: TumblrModelProtocol {
-  var meta: Meta
-  var response: Response
+  var meta: Meta?
+  var response: TumblrResponse?
 }
 
 struct User: Codable {

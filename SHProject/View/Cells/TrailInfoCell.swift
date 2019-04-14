@@ -36,8 +36,8 @@ class TrailInfoCell: UITableViewCell, TumblrImage {
     }
     
     if trail.isEmpty == false {
-      let url = URL(string: trail.first?.blog?.theme?.headerImage ?? "")
-      headerImageView.kf.setImage(with: url)
+      let urlstr = trail.first?.blog?.theme?.headerImage ?? ""
+      setImage(headerImageView, urlstr, false, 10)
     } else {
       headerImageView.image = UIImage(named: "placeholderImage")
     }
@@ -55,11 +55,5 @@ class TrailInfoCell: UITableViewCell, TumblrImage {
         debugPrint("couldn't not parse \(html): \(error)")
       }
     }
-  }
-}
-
-extension TrailInfoCell {
-  static func height() -> CGFloat {
-    return 200.0
   }
 }

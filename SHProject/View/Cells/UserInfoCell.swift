@@ -28,7 +28,7 @@ class UserInfoCell: UICollectionViewCell {
       debugPrint("userInfo is Empty!")
       return
     }
-    let user = userInfo.response.user
+    let user = userInfo.response?.user
     titleLabel.text = user?.blogs?.first?.title
     postLabel.text = String(user?.blogs?.first?.posts ?? 0)
     likeLabel.text = String(user?.likes ?? 0)

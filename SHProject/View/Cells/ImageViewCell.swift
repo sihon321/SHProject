@@ -12,7 +12,7 @@ class ImageViewCell: UITableViewCell, TumblrImage {
 
   var urlStr: String = "" {
     didSet {
-      setImage(mainImageView, urlStr)
+      setImage(mainImageView, urlStr, true, 0)
     }
   }
   
@@ -26,22 +26,6 @@ class ImageViewCell: UITableViewCell, TumblrImage {
   override func layoutSubviews() {
     super.layoutSubviews()
     
-    guard let imageView = self.mainImageView else {
-      return
-    }
-    imageView.frame = CGRect.zero
-    
-    if (imageView.image != nil) {
-      imageView.frame = CGRect(x: 0, y: 0,
-                               width: UIScreen.width,
-                               height: ImageViewCell.height())
-    }
   }
-    
-}
 
-extension ImageViewCell {
-  static func height() -> CGFloat {
-    return 400.0
-  }
 }

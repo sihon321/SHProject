@@ -22,6 +22,11 @@ extension UIScreen {
     return UIScreen.main.bounds.size.height
   }
   
+  public class func rateHeight(_ height: CGFloat) -> CGFloat {
+    return round(height * (UIScreen.width / 375.0))
+  }
+  
+  
   
 }
 

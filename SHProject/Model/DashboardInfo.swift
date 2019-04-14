@@ -9,8 +9,8 @@
 import Foundation
 
 struct DashboardInfo: TumblrModelProtocol {
-  var meta: Meta
-  var response: Response
+  var meta: Meta?
+  var response: TumblrResponse?
 }
 
 struct PostElement: Codable {
@@ -48,7 +48,7 @@ struct PostElement: Codable {
 }
 
 enum PostType: String, Codable {
-  case photo, text, answer, video
+  case photo, text, answer, video, link
 }
 
 struct PostBlog: Codable {
@@ -132,18 +132,6 @@ extension DashboardInfo {
   }
 }
 
-extension Response {
-  init(data: Data) throws {
-    self = try newJSONDecoder().decode(Response.self, from: data)
-  }
-  
-  init(_ json: String, using encoding: String.Encoding = .utf8) throws {
-    guard let data = json.data(using: encoding) else {
-      throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
-    }
-    try self.init(data: data)
-  }
-}
 
 extension PostElement {
   init(data: Data) throws {

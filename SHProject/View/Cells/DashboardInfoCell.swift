@@ -24,7 +24,7 @@ class DashboardInfoCell: UICollectionViewCell, TumblrImage {
     }
     
     let urlStr = post.photos?.first?.originalSize?.url ?? ""
-    setImage(mainImageView, urlStr, 20)
+    setImage(mainImageView, urlStr, false, 20)
     
     if post.tags?.isEmpty ?? true {
       titleLabel.text = post.summary
@@ -36,7 +36,7 @@ class DashboardInfoCell: UICollectionViewCell, TumblrImage {
   }
   
   func snapShot() -> UIView! {
-    let view = UIImageView(frame: mainImageView.bounds)
+    let view = UIImageView(frame: mainImageView.frame)
     view.image = mainImageView.image
     return view
   }

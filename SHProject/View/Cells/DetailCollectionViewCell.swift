@@ -36,27 +36,13 @@ class DetailCollectionViewCell: UICollectionViewCell {
     
     self.post = post
     self.image = image
+    tableView.rowHeight = UITableView.automaticDimension
   }
   
   override func layoutSubviews() {
     super.layoutSubviews()
     
     tableView.reloadData()
-  }
-}
-
-extension DetailCollectionViewCell: UITableViewDelegate {
-  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    let sectionType = SectionType(rawValue: indexPath.section)!
-    
-    switch sectionType {
-    case .image:
-      return ImageViewCell.height()
-    case .blog:
-      return BlogInfoCell.height()
-    case .trail:
-      return TrailInfoCell.height()
-    }
   }
 }
 
@@ -84,7 +70,7 @@ extension DetailCollectionViewCell: UITableViewDataSource {
     case .image:
       let cell = tableView.dequeueReusableCell(withIdentifier: ImageViewCell.reuseIdentifier, for: indexPath) as! ImageViewCell
       cell.urlStr = post?.photos?.first?.originalSize?.url ?? ""
-      
+
       return cell
     case .blog:
       let cell = tableView.dequeueReusableCell(withIdentifier: BlogInfoCell.reuseIdentifier, for: indexPath) as! BlogInfoCell

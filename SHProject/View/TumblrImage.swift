@@ -10,32 +10,51 @@ import UIKit
 import Kingfisher
 
 protocol TumblrImage {
-  func setImage(_ imageView: UIImageView, _ urlStr: String, _ cornerRadius: CGFloat)
+  func setImage(_ imageView: UIImageView,
+                _ urlStr: String,
+                _ isAnimation: Bool,
+                _ cornerRadius: CGFloat)
 }
 
 extension TumblrImage {
-  func setImage(_ imageView: UIImageView, _ urlStr: String, _ cornerRadius: CGFloat = 0) {
+  func setImage(_ imageView: UIImageView,
+                _ urlStr: String,
+                _ isAnimation: Bool,
+                _ cornerRadius: CGFloat = 0.0) {
     let url = URL(string: urlStr)
-    let processor = DownsamplingImageProcessor(size: imageView.frame.size)
-      >> RoundCornerImageProcessor(cornerRadius: cornerRadius)
-    imageView.kf.indicatorType = .activity
-    imageView.kf.setImage(
-      with: url,
-      placeholder: UIImage(named: "placeholderImage"),
-      options: [
-        .processor(processor),
-        .scaleFactor(UIScreen.main.scale),
-        .transition(.fade(1)),
-        .cacheOriginalImage
-      ])
-    {
-      result in
-      switch result {
-      case .success(let value):
-        print("Task done for: \(value.source.url?.absoluteString ?? "")")
-      case .failure(let error):
-        print("Job failed: \(error.localizedDescription)")
+    var processor: ImageProcessor?
+    
+    if isAnimation {
+      processor = DefaultImageProcessor()
+    } else {
+      processor = DownsamplingImageProcessor(size: imageView.frame.size)
+    }
+    
+    if cornerRadius != 0.0 {
+      processor = processor! >> RoundCornerImageProcessor(cornerRadius: cornerRadius)
+    }
+    
+    if let processor = processor {
+      imageView.kf.indicatorType = .activity
+      imageView.kf.setImage(
+        with: url,
+        placeholder: UIImage(named: "placeholderImage"),
+        options: [
+          .processor(processor),
+          .scaleFactor(UIScreen.main.scale),
+          .transition(.fade(1)),
+        ])
+      {
+        result in
+        switch result {
+        case .success(let value):
+          print("Task done for: \(value.source.url?.absoluteString ?? "")")
+        case .failure(let error):
+          print("Job failed: \(error.localizedDescription)")
+        }
       }
     }
+    
   }
+  
 }

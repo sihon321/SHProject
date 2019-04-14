@@ -62,10 +62,3 @@ class BlogInfoCell: UITableViewCell {
     }
   }
 }
-
-extension BlogInfoCell {
-  static func height() -> CGFloat {
-    return 110.0
-  }
-  
-}

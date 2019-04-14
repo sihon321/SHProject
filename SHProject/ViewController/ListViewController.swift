@@ -16,7 +16,7 @@ protocol ListViewDelegate: class {
 extension ListViewController: ListViewDelegate {
   func requestMoreData(_ index: Int, _ completion: @escaping (Bool, [PostElement]?) -> Void) {
     
-    fetchDashBoard(offset, index) { (isSuccess, posts) in
+    fetchDashBoard(index) { (isSuccess, posts) in
       completion(isSuccess, posts)
     }
   }
@@ -36,14 +36,7 @@ class ListViewController: UIViewController {
   
   private var posts: [PostElement] = []
   
-  private var _offset = 0
-  
-  private var offset: Int {
-    get {
-      _offset += 20
-      return _offset
-    }
-  }
+  private var offset = 0
   
   private var isMore = true
   
@@ -59,17 +52,18 @@ class ListViewController: UIViewController {
         .reloadSections(IndexSet([ListSectionType.user.rawValue]))
     }
     
-    fetchDashBoard(offset, 0, nil)
+    fetchDashBoard(0, nil)
     
     collectionView.register(DashboardInfoCell.self)
     collectionView.register(UserInfoCell.self)
     collectionView.register(ListFooterView.self, .footer)
   }
   
-  private func fetchDashBoard(_ offset: Int,
-                              _ currentIdx: Int,
+  private func fetchDashBoard(_ currentIdx: Int,
                               _ completion: ((Bool, [PostElement]?) -> Void)? = nil) {
     if isMore, currentIdx + 1 >= posts.count {
+      debugPrint(offset)
+      offset += 20
       AuthService.shared.requestDashBoard(offset) { [weak self] (isSuccess, dashboardInfo) in
         guard isSuccess,
           let strongSelf = self else {
@@ -79,7 +73,7 @@ class ListViewController: UIViewController {
         }
         
         if let photoPosts = dashboardInfo?
-          .response.posts?.filter({ $0.type == .photo }) {
+          .response?.posts?.filter({ $0.type == .photo }) {
           strongSelf.posts += photoPosts
           
           strongSelf
@@ -100,7 +94,9 @@ extension ListViewController: UICollectionViewDelegate {
     if indexPath.section == ListSectionType.dashboard.rawValue {
       let flowLayout = UICollectionViewFlowLayout()
       flowLayout.itemSize = CGSize(width: UIScreen.width,
-                                   height: UIScreen.height - 88 - 34)
+                                   height: UIScreen.height
+                                    - 88.0
+                                    - UIScreen.statusBarHeight)
       
       flowLayout.minimumLineSpacing = 0
       flowLayout.minimumInteritemSpacing = 0
@@ -149,7 +145,7 @@ extension ListViewController: UICollectionViewDataSource {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DashboardInfoCell.reuseIdentifier,
                                                     for: indexPath) as! DashboardInfoCell
       cell.config(postInfo)
-      fetchDashBoard(offset, indexPath.row)
+      fetchDashBoard(indexPath.row)
       return cell
     }
   }

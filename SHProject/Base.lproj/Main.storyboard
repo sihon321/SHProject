@@ -21,7 +21,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="90u-Qb-bwM">
                                 <rect key="frame" x="22" y="239" width="370" height="76"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="370" id="6IV-VH-jtz"/>
                                     <constraint firstAttribute="height" constant="76" id="kha-JA-bxf"/>
                                 </constraints>
                             </imageView>
@@ -46,10 +45,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.21176470588235294" green="0.27450980392156865" blue="0.36470588235294116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LAo-yQ-8qt" firstAttribute="trailing" secondItem="90u-Qb-bwM" secondAttribute="trailing" constant="22" id="Act-Me-eca"/>
                             <constraint firstItem="qPV-rr-xLz" firstAttribute="centerX" secondItem="96p-Tj-2iq" secondAttribute="centerX" id="EOk-a3-FYm"/>
                             <constraint firstItem="cFo-xT-WRU" firstAttribute="centerX" secondItem="96p-Tj-2iq" secondAttribute="centerX" id="Phd-PZ-4C6"/>
                             <constraint firstItem="cFo-xT-WRU" firstAttribute="centerY" secondItem="96p-Tj-2iq" secondAttribute="centerY" id="SaY-vp-z4z"/>
                             <constraint firstItem="qPV-rr-xLz" firstAttribute="top" secondItem="90u-Qb-bwM" secondAttribute="bottom" constant="250" id="WTB-I6-0oa"/>
+                            <constraint firstItem="90u-Qb-bwM" firstAttribute="leading" secondItem="LAo-yQ-8qt" secondAttribute="leading" constant="22" id="aic-A7-d4t"/>
                             <constraint firstItem="90u-Qb-bwM" firstAttribute="centerX" secondItem="96p-Tj-2iq" secondAttribute="centerX" id="bPc-td-qdr"/>
                             <constraint firstItem="90u-Qb-bwM" firstAttribute="top" secondItem="LAo-yQ-8qt" secondAttribute="top" constant="195" id="hEt-ss-1tv"/>
                         </constraints>

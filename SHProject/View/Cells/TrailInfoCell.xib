@@ -25,7 +25,7 @@
                             <constraint firstAttribute="height" constant="114.5" id="alk-8P-jja"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-hy-Gmi">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjl-hy-Gmi">
                         <rect key="frame" x="15" y="156" width="256" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
@@ -47,6 +47,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="6Vn-6T-ck8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="BJa-ub-zkr"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Cjl-hy-Gmi" secondAttribute="bottom" constant="10" id="Chr-nT-lgg"/>
                     <constraint firstItem="c3e-Zn-g5z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Ssp-l3-0kZ"/>
                     <constraint firstAttribute="trailing" secondItem="c3e-Zn-g5z" secondAttribute="trailing" constant="10" id="U2I-dK-w4u"/>
                     <constraint firstItem="Cjl-hy-Gmi" firstAttribute="top" secondItem="c3e-Zn-g5z" secondAttribute="bottom" constant="7" id="aOU-3N-cxM"/>
