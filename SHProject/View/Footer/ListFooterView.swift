@@ -9,10 +9,22 @@
 import UIKit
 
 class ListFooterView: UICollectionReusableView {
+  
+  @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+    indicatorView.startAnimating()
+  }
+  
+  override func prepareForReuse() {
+    indicatorView.startAnimating()
+  }
+}
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
+extension ListFooterView {
+  static func size() -> CGSize {
+    return CGSize(width: UIScreen.width, height: 100.0)
+  }
 }

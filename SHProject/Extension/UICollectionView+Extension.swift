@@ -10,6 +10,18 @@ import UIKit
 
 var kIndexPathPointer = "kIndexPathPointer"
 
+enum CollectionViewElementKind: String {
+  case header, footer
+  fileprivate var stringValue: String {
+    switch self {
+    case .header:
+      return UICollectionView.elementKindSectionHeader
+    case .footer:
+      return UICollectionView.elementKindSectionFooter
+    }
+  }
+}
+
 extension UICollectionReusableView: NibLoadableView { }
 
 extension UICollectionReusableView: ReusableView { }
@@ -48,6 +60,15 @@ extension UICollectionView {
     
     let nib = UINib(nibName: T.nibName, bundle: nil)
     register(nib, forCellWithReuseIdentifier: T.reuseIdentifier)
+  }
+  
+  func register<T: UIView>(_: T.Type,
+                           _ elementKind: CollectionViewElementKind) where T: ReusableView, T: NibLoadableView {
+    
+    let nib = UINib.init(nibName: T.nibName, bundle: nil)
+    register(nib,
+             forSupplementaryViewOfKind: elementKind.stringValue,
+             withReuseIdentifier: T.reuseIdentifier)
   }
 }
 

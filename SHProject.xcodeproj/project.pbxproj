@@ -43,6 +43,7 @@
 		A822365E226344FF00C8BAE5 /* ListFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A822365C226344FF00C8BAE5 /* ListFooterView.swift */; };
 		A822365F226344FF00C8BAE5 /* ListFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A822365D226344FF00C8BAE5 /* ListFooterView.xib */; };
 		A82236612263480700C8BAE5 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236602263480700C8BAE5 /* UITableView+Extension.swift */; };
+		A82236632263687E00C8BAE5 /* TumblrImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82236622263687E00C8BAE5 /* TumblrImage.swift */; };
 		A8230D502261A70400E737E4 /* UIImageView+Render.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */; };
 		A8230D522261FCE000E737E4 /* URLPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D512261FCE000E737E4 /* URLPath.swift */; };
 		A8230D542262076A00E737E4 /* BlogService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8230D532262076A00E737E4 /* BlogService.swift */; };
@@ -108,6 +109,7 @@
 		A822365C226344FF00C8BAE5 /* ListFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFooterView.swift; sourceTree = "<group>"; };
 		A822365D226344FF00C8BAE5 /* ListFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListFooterView.xib; sourceTree = "<group>"; };
 		A82236602263480700C8BAE5 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		A82236622263687E00C8BAE5 /* TumblrImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TumblrImage.swift; sourceTree = "<group>"; };
 		A8230D4F2261A70400E737E4 /* UIImageView+Render.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Render.swift"; sourceTree = "<group>"; };
 		A8230D512261FCE000E737E4 /* URLPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLPath.swift; sourceTree = "<group>"; };
 		A8230D532262076A00E737E4 /* BlogService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogService.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 				A822365B226344BB00C8BAE5 /* Footer */,
 				A81AF30D226032FC00E77DC8 /* NibLoadableView.swift */,
 				A818AA46225E04FC00CBFE22 /* Cells */,
+				A82236622263687E00C8BAE5 /* TumblrImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				A81AF30E226032FC00E77DC8 /* NibLoadableView.swift in Sources */,
 				A818AA3E225E047B00CBFE22 /* UIView+Extension.swift in Sources */,
 				A818AA34225E037600CBFE22 /* DetailViewController.swift in Sources */,
+				A82236632263687E00C8BAE5 /* TumblrImage.swift in Sources */,
 				A818AA40225E04A100CBFE22 /* UICollectionView+Extension.swift in Sources */,
 				A822365E226344FF00C8BAE5 /* ListFooterView.swift in Sources */,
 				A818AA39225E03C300CBFE22 /* DisappearAnimatedTransitioning.swift in Sources */,

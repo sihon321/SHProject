@@ -10,11 +10,13 @@ import UIKit
 
 class DetailViewController: UICollectionViewController {
   
-  var posts: [PostElement]? = nil
+  weak var delegate: ListViewDelegate?
   
-  var avatarImages: [String: UIImage] = [:]
+  private var posts: [PostElement] = []
   
-  init(data: [PostElement]?,
+  private var avatarImages: [String: UIImage] = [:]
+  
+  init(data: [PostElement],
        collectionViewLayout layout: UICollectionViewLayout,
        currentIndexPath indexPath: IndexPath) {
     super.init(collectionViewLayout:layout)
@@ -49,6 +51,7 @@ class DetailViewController: UICollectionViewController {
       }
     }
   }
+  
   // MARK: UICollectionViewDataSource
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -56,18 +59,32 @@ class DetailViewController: UICollectionViewController {
   }
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return posts?.count ?? 0
+    return posts.count
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailCollectionViewCell.reuseIdentifier,
                                                   for: indexPath) as! DetailCollectionViewCell
-    if let post = posts?[indexPath.row], let id = post.blog?.name {
+    if let id = posts[indexPath.row].blog?.name {
       fetchAvatarImage(id, indexPath)
-      cell.config(post, avatarImages[id])
+      cell.config(posts[indexPath.row], avatarImages[id])
     }
+    
     return cell
+  }
+  
+  // MARK: UICollectionViewDelegate
+  
+  override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    if scrollView.contentOffset.x + UIScreen.width
+      >= scrollView.contentSize.width {
+      delegate?.requestMoreData(posts.count) { [weak self] (isSuccess, posts) in
+        guard let strongSelf = self, let morePosts = posts else { return }
+        strongSelf.posts += morePosts
+        strongSelf.collectionView.reloadData()
+      }
+    }
   }
 }
 

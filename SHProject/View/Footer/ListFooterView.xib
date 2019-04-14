@@ -12,10 +12,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ListFooterView" customModule="SHProject" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="d0W-5o-afe">
+                    <rect key="frame" x="150" y="15" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="gbv-pe-5fM"/>
+                        <constraint firstAttribute="height" constant="20" id="q6O-tC-iCq"/>
+                    </constraints>
+                    <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="d0W-5o-afe" firstAttribute="centerY" secondItem="U6b-Vx-4bR" secondAttribute="centerY" id="1nY-Yw-Fns"/>
+                <constraint firstItem="d0W-5o-afe" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="dTK-TV-S2P"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <connections>
+                <outlet property="indicatorView" destination="d0W-5o-afe" id="ntI-Yq-WrD"/>
+            </connections>
         </collectionReusableView>
     </objects>
 </document>

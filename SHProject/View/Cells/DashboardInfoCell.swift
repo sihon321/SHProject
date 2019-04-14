@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DashboardInfoCell: UICollectionViewCell {
+class DashboardInfoCell: UICollectionViewCell, TumblrImage {
   
   @IBOutlet weak var mainImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
@@ -23,8 +23,8 @@ class DashboardInfoCell: UICollectionViewCell {
       return
     }
     
-    let url = URL(string: post.photos?.first?.originalSize?.url ?? "")
-    mainImageView.render(img: url)
+    let urlStr = post.photos?.first?.originalSize?.url ?? ""
+    setImage(mainImageView, urlStr, 20)
     
     if post.tags?.isEmpty ?? true {
       titleLabel.text = post.summary

@@ -83,7 +83,7 @@ extension DetailCollectionViewCell: UITableViewDataSource {
     switch sectionType {
     case .image:
       let cell = tableView.dequeueReusableCell(withIdentifier: ImageViewCell.reuseIdentifier, for: indexPath) as! ImageViewCell
-      cell.url = URL(string: post?.photos?.first?.originalSize?.url ?? "")
+      cell.urlStr = post?.photos?.first?.originalSize?.url ?? ""
       
       return cell
     case .blog:

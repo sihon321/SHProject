@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ImageViewCell: UITableViewCell {
+class ImageViewCell: UITableViewCell, TumblrImage {
 
-  var url: URL? {
+  var urlStr: String = "" {
     didSet {
-      mainImageView?.render(img: url, contentMode: .scaleAspectFit)
+      setImage(mainImageView, urlStr)
     }
   }
   

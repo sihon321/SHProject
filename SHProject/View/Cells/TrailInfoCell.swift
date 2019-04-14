@@ -8,8 +8,7 @@
 
 import UIKit
 
-class TrailInfoCell: UITableViewCell {
-  
+class TrailInfoCell: UITableViewCell, TumblrImage {
   
   @IBOutlet weak var syncImageView: UIImageView!
   
@@ -25,21 +24,25 @@ class TrailInfoCell: UITableViewCell {
   }
   
   func config(_ trail: [Trail]?, _ post: PostBlog?) {
-    guard let trail = trail?.first else {
+    guard let trail = trail else {
       debugPrint("trail is Empty!")
       return
     }
     
-    if trail.blog?.name == post?.name {
+    if trail.first?.blog?.name == post?.name {
       syncImageView.image = UIImage(named: "baseline_undo_black_18pt")
     } else {
       syncImageView.image = UIImage(named: "baseline_sync_black_18pt")
     }
     
-    let url = URL(string: trail.blog?.theme?.headerImage ?? "")
-    headerImageView.render(img: url)
-    nameLabel.text = trail.blog?.name
-    setupContentLabel(trail.content)
+    if trail.isEmpty == false {
+      let url = URL(string: trail.first?.blog?.theme?.headerImage ?? "")
+      headerImageView.kf.setImage(with: url)
+    } else {
+      headerImageView.image = UIImage(named: "placeholderImage")
+    }
+    nameLabel.text = trail.first?.blog?.name ?? post?.name ?? ""
+    setupContentLabel(trail.first?.content ?? post?.description ?? "")
   }
 
   private func setupContentLabel(_ content: String?) {
