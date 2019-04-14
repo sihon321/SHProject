@@ -222,19 +222,12 @@ extension ListViewController: TransitionProtocol {
   }
   
   func viewWillAppearWithPageIndex(_ pageIndex: NSInteger) {
-    var position = UICollectionView
+    let position = UICollectionView
       .ScrollPosition
       .centeredHorizontally
       .intersection(.centeredVertically)
     let dashIndexPath = IndexPath(row: pageIndex, section: 1)
-    let cell = collectionView.cellForItem(at: dashIndexPath) as? DashboardInfoCell
-    let height = cell?.bounds.height ?? 0.0
     
-    if height > 400.0 {
-      position = .top
-    }
-    
-    let collectionView = self.collectionView!
     collectionView.setToIndexPath(dashIndexPath)
     if pageIndex < 2 {
       collectionView.setContentOffset(CGPoint.zero, animated: false)
