@@ -29,13 +29,13 @@
                                     <constraint firstAttribute="height" constant="60" id="Jkn-OX-WPw"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu9-s3-M3D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fu9-s3-M3D">
                                 <rect key="frame" x="90" y="17.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqp-6g-flg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqp-6g-flg">
                                 <rect key="frame" x="143" y="17.5" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -72,12 +72,13 @@
                         <constraints>
                             <constraint firstItem="u7t-JN-JRI" firstAttribute="leading" secondItem="OdX-ek-Ees" secondAttribute="trailing" constant="15" id="3cg-gt-Lat"/>
                             <constraint firstItem="kqp-6g-flg" firstAttribute="top" secondItem="z5h-x9-kr4" secondAttribute="top" constant="17" id="9Wp-6b-95z"/>
+                            <constraint firstItem="M20-rb-k6J" firstAttribute="top" secondItem="kqp-6g-flg" secondAttribute="bottom" priority="750" constant="10" id="ATY-kx-Lw7"/>
                             <constraint firstItem="OdX-ek-Ees" firstAttribute="top" secondItem="M20-rb-k6J" secondAttribute="bottom" constant="13" id="Jos-HG-h4F"/>
                             <constraint firstItem="kqp-6g-flg" firstAttribute="leading" secondItem="0vb-qF-82y" secondAttribute="trailing" constant="5" id="LgI-DD-ke1"/>
                             <constraint firstItem="u7t-JN-JRI" firstAttribute="bottom" secondItem="OdX-ek-Ees" secondAttribute="bottom" id="MOf-0D-63L"/>
                             <constraint firstItem="xha-k2-ctk" firstAttribute="top" secondItem="z5h-x9-kr4" secondAttribute="top" constant="15" id="Mcx-8D-Cn8"/>
                             <constraint firstItem="OdX-ek-Ees" firstAttribute="leading" secondItem="z5h-x9-kr4" secondAttribute="leading" constant="90" id="QUx-Jt-yfH"/>
-                            <constraint firstItem="M20-rb-k6J" firstAttribute="top" secondItem="fu9-s3-M3D" secondAttribute="bottom" constant="10" id="QbD-hZ-c51"/>
+                            <constraint firstItem="M20-rb-k6J" firstAttribute="top" secondItem="fu9-s3-M3D" secondAttribute="bottom" priority="750" constant="10" id="QbD-hZ-c51"/>
                             <constraint firstItem="M20-rb-k6J" firstAttribute="leading" secondItem="xha-k2-ctk" secondAttribute="trailing" constant="15" id="Uan-57-Wt7"/>
                             <constraint firstItem="0vb-qF-82y" firstAttribute="top" secondItem="z5h-x9-kr4" secondAttribute="top" constant="20" id="Vav-Ss-JjG"/>
                             <constraint firstItem="u7t-JN-JRI" firstAttribute="top" secondItem="M20-rb-k6J" secondAttribute="bottom" constant="15" id="W6i-ao-pbz"/>

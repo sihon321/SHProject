@@ -42,6 +42,7 @@ class DetailCollectionViewCell: UICollectionViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
     
+    tableView.setContentOffset(.zero, animated: false)
     tableView.reloadData()
   }
 }
